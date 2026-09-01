@@ -4,16 +4,21 @@ Static, single file, no build step. `index.html` + the CV PDF.
 
 ## Deploy for free
 
-### Option A — GitHub Pages (recommended, gives you bekiryavuzkoc.github.io)
+### Option A — GitHub Pages (this repo, recommended)
+Repo: https://github.com/bekiryavuzkoc/personalwebsite (already pushed, branch `main`).
+
+1. GitHub → repo → **Settings → Pages**
+2. Source: **Deploy from a branch** · Branch: **main** · Folder: **/ (root)** → Save
+3. Live in a minute at **https://bekiryavuzkoc.github.io/personalwebsite/**
+
+Root URL instead (`https://bekiryavuzkoc.github.io/`): Settings → General → rename the repo to `bekiryavuzkoc.github.io`. Nothing else changes.
+
+Custom domain: Settings → Pages → Custom domain, then a CNAME record at your DNS pointing to `bekiryavuzkoc.github.io`.
+
+Update the site:
 ```bash
-cd ~/cv/site
-git init -b main
-git add .
-git commit -m "Personal site"
-gh repo create bekiryavuzkoc.github.io --public --source=. --push
-# GitHub → repo → Settings → Pages → Source: "Deploy from a branch", Branch: main / (root)
+cd ~/cv/site && git add -A && git commit -m "Update" && git push
 ```
-Live at https://bekiryavuzkoc.github.io within a minute or two.
 
 ### Option B — Cloudflare Pages (drag and drop)
 Cloudflare dashboard → Workers & Pages → Create → Pages → "Upload assets" → drop the `site/` folder.
